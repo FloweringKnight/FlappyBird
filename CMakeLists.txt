@@ -3,4 +3,10 @@ project(FlappyBird)
 
 set(CMAKE_CXX_STANDARD 26)
 
+include_directories(D:/CLion/mingw64/include)
+find_package(SFML 3.0.0 REQUIRED COMPONENTS System Window Graphics Audio Network) # 检查你的 SFML 版本
+set(SFML_DIR "D:/CLion/mingw64/lib/cmake/SFML/")
+
 add_executable(FlappyBird main.cpp)
+
+target_link_libraries(FlappyBird PRIVATE SFML::Graphics SFML::Audio SFML::Network SFML::System SFML::Window)
